@@ -1,0 +1,25 @@
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  mat-card {
+    text-align: center;
+    width: 15rem;
+    line-height: 2;
+
+    button {
+      margin-top: 2rem;
+    }
+  }
+
+  mat-tab-group {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  ::ng-deep mat-tab-header {
+    background-color: #f9f9f9;
+  }
+
+}
+
