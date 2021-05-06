@@ -1,14 +1,13 @@
 .content-wrapper {
   display: grid;
   grid-template-columns: 1fr minmax(147px, 4fr);
-  //grid-template-columns: 1fr;
   gap: 1rem;
 
   mat-card {
     text-align: center;
-    width: 15rem;
     line-height: 2;
     min-height: 10rem;
+    min-width: 12rem;
 
     button {
       position: absolute;

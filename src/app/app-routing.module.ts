@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./shell/shell.module').then(m => m.ShellModule)
+  },
+  {
+    path: '**', redirectTo: ''
   }
 ];
 

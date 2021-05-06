@@ -2,3 +2,12 @@
   width: 24rem;
   margin: 1.5rem auto 2rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .details {
+    width: 13rem;
+  }
+}

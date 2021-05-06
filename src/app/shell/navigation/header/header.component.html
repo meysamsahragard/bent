@@ -1,8 +1,13 @@
 <mat-toolbar>
-  <div>
-    <span>Logo</span>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
   <div>
+    <b routerLink="/home">Logo</b>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
     <button mat-button routerLink="/home" routerLinkActive="mat-accent">Home</button>
     <button mat-button routerLink="/pricing" routerLinkActive="mat-accent">Pricing</button>
     <button mat-button routerLink="contact-us" routerLinkActive="mat-accent">Contact Us</button>
