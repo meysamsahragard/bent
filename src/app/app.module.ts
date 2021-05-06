@@ -8,6 +8,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoadingComponent} from './shared/loading/loading.component';
 import {fakeBackendProvider} from './core/fake-backend/fake-backend.interseptor';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import {fakeBackendProvider} from './core/fake-backend/fake-backend.interseptor'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately'
+    })
   ],
   providers: [fakeBackendProvider,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
