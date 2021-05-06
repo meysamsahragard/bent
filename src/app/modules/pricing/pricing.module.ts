@@ -1,25 +1,25 @@
 import {NgModule} from '@angular/core';
-import {PricingComponent} from './pricing.component';
-import {MatCardModule} from '@angular/material/card';
-import {CommonModule} from '@angular/common';
-import {CustomPipesModule} from '../../shared/pipes/custom-pipes.module';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTabsModule} from '@angular/material/tabs';
 import {RouterModule} from '@angular/router';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import {PricingComponent} from './pricing.component';
+import {CustomPipesModule} from '../../shared/pipes/custom-pipes.module';
 import {PricingRoutes} from './routes';
-import {TopSectionModule} from '../../shared/components/top-section/top-section.module';
+import {ServicesModule} from './services/services.module';
+import {ServicesResolver} from './services-resolver';
+import {AdditionalResolver} from './additional-resolver';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     RouterModule.forChild(PricingRoutes),
-    MatCardModule,
-    CommonModule,
-    CustomPipesModule,
-    MatButtonModule,
     MatTabsModule,
-    TopSectionModule
+    CustomPipesModule,
+    ServicesModule,
+    SharedModule
   ],
-  declarations: [PricingComponent]
+  declarations: [PricingComponent],
+  providers: [ServicesResolver, AdditionalResolver]
 })
 
 export class PricingModule {

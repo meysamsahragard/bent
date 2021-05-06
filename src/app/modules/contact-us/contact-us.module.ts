@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
-import {ContactUsComponent} from './contact-us.component';
 import {RouterModule} from '@angular/router';
+
+import {ContactUsComponent} from './contact-us.component';
 import {ContactUsRoutes} from './routes';
-import {TopSectionModule} from '../../shared/components/top-section/top-section.module';
+import {CardComponent} from './card/card.component';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
-  imports: [RouterModule.forChild(ContactUsRoutes), TopSectionModule],
-  declarations: [ContactUsComponent]
+  imports: [
+    RouterModule.forChild(ContactUsRoutes),
+    SharedModule],
+  declarations: [ContactUsComponent, CardComponent]
 })
 
 export class ContactUsModule {

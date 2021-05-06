@@ -1,1 +1,10 @@
-<app-top-section [title]="title" [details]="details"> </app-top-section>
+<app-top-section [title]="title" [details]="details"></app-top-section>
+<div class="d-flex justify-between flex-wrap">
+  <app-contact-card
+    *ngFor="let contact of this.contacts"
+    [title]="contact.title"
+    [imageUrl]="contact.imageUrl"
+    [value]="contact.value"
+  >
+  </app-contact-card>
+</div>

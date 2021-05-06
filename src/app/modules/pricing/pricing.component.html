@@ -3,15 +3,18 @@
   <mat-card class="mat-elevation-z4">
     <h1><b>Final Price</b></h1>
     <div>
-      <div [outerHTML]="100000|currency | year"></div>
-      <div [innerHTML]="100000|currency | month"></div>
+      <div [innerHTML]="(price$ | async)*10 |currency | year"></div>
+      <div [innerHTML]="price$ | async|currency | month"></div>
     </div>
     <button mat-raised-button>Proceed to next step</button>
   </mat-card>
 
   <mat-tab-group class="mat-elevation-z4">
     <mat-tab label="Services">
+      <app-services [TREE_DATA]="services" (selectedPrice)="setSelectedServicesPrice($event)"></app-services>
     </mat-tab>
-    <mat-tab label="Additional"> Content 2</mat-tab>
+    <mat-tab label="Additional">
+      <app-services [TREE_DATA]="additional" (selectedPrice)="setSelectedAdditionalPrice($event)"></app-services>
+    </mat-tab>
   </mat-tab-group>
 </div>

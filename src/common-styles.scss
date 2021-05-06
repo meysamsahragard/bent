@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.justify-between {
+  justify-content: space-around;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 .d-flex {
   display: flex;
 }
