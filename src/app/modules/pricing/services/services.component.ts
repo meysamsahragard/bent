@@ -60,6 +60,9 @@ export class ServicesComponent implements OnInit {
       return false;
     }
     const result = descendants.some(child => this.checklistSelection.isSelected(child));
+    if (result && !this.descendantsAllSelected(node)) {
+      this.checklistSelection.deselect(node);
+    }
     return result && !this.descendantsAllSelected(node);
   }
 

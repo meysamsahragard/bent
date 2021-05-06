@@ -1,23 +1,21 @@
 .content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr minmax(147px, 4fr);
+  //grid-template-columns: 1fr;
+  gap: 1rem;
 
   mat-card {
     text-align: center;
     width: 15rem;
     line-height: 2;
+    min-height: 10rem;
 
     button {
       position: absolute;
       bottom: 12px;
-      left: 3.7rem;
+      left: 50%;
+      margin-left: -79px;
     }
-  }
-
-  mat-tab-group {
-    flex-grow: 1;
-    margin-left: 1rem;
   }
 
   ::ng-deep mat-tab-header {
@@ -26,3 +24,9 @@
 
 }
 
+@media only screen and (max-width: 600px) {
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
